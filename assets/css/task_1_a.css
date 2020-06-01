@@ -1,0 +1,129 @@
+*{
+    font-family: 'Titillium Web', sans-serif;
+}
+body{
+    width:100%;
+    margin:auto; 
+}
+.form_1{
+  width:520px;
+  height:500px;
+  margin:auto;
+  background-color:#24323D;
+  border-radius: 7px;   
+  box-shadow: 0 0 10px;
+  padding:40px;
+  margin-top:20px;
+}
+.signup_tab,.login_tab{
+width:50%;
+display:inline-block; 
+color:white;
+text-align:center;
+padding-top:15px;
+padding-bottom:15px;
+vertical-align: center;
+font-size:20px;
+cursor: pointer;
+}
+
+.signup_tab{
+   background-color:#1AB188;
+}
+
+.login_tab{
+    background-color:#43525A;
+    color:#97AEAA;
+}
+
+.login_heading{
+    padding:40px;
+    text-align:center;
+    clear:both;
+    font-size:35px;
+    color:#E4E5E6;
+}
+
+.get_started_button{
+   border:0px; 
+   background:#1AB188; 
+   font-size:30px;
+   font-weight:bold;
+   display:block;
+   width:100% !important;
+   padding-top:12px;
+   padding-bottom:12px;
+   color:white;
+   font-family: sans-serif;
+   letter-spacing: 6px;
+}
+
+input{
+    border:1px solid #91A4A3;
+    width:100%;
+    box-sizing: border-box;
+    display:inline-block; 
+    margin-bottom:30px;
+    padding-top:7px;
+    padding-bottom:7px;
+    padding-left:12px;
+    background-color:transparent;
+    color:white; 
+    box-shadow: 0px 0px 2px 1px red; 
+
+}
+.first_name,.last_name{
+    display: inline-block;
+    width:48% !important;
+}
+
+.last_name{
+    float:right;
+    position:relative;
+}
+
+::placeholder {
+   color:#80909B; 
+   font-size:20px;
+   top:2px;
+   position:relative;
+ }
+
+ ::-webkit-input-placeholder:after {
+   content: '*';
+   color:seagreen;
+   visibility: visible;
+}
+:-moz-placeholder:after { /* Firefox 18- */
+   content: '*'; 
+   color:seagreen;
+}
+
+::-moz-placeholder:after {  /* Firefox 19+ */
+   content: '*';
+   color:seagreen;
+}
+:-ms-input-placeholder:after {  
+    content: '*';
+    color:seagreen;
+}
+
+.fa-unlock-alt:before {
+    content: "\f13e";
+    left: 495px;
+    position: relative;
+    bottom: 58px;
+    color: #ccc;
+    float: left;
+}
+
+.fa-user-md{
+    right: 24px;
+    position: relative;
+    color: #ccc;
+}
+
+.first_name::before{
+    content:'*'; 
+    color:red;
+}
