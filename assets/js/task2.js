@@ -6,10 +6,11 @@ function createDynamicButtons(){
          button.setAttribute('class','btn'); 
          button.style.marginRight="20px"; 
 
-         button.setAttribute('id',button_number); 
+         button.setAttribute('id',i); 
+         button.setAttribute('name',"Button "+button_number);
          button.innerHTML="Click Button "+button_number;
          var dyanamic_area=document.getElementById('dynamic_button_area');
-         dyanamic_area.appendChild(button); 
+         dyanamic_area.appendChild(button);  
      }
 
      //Now add the event handlers for the buttons.
@@ -18,9 +19,9 @@ function createDynamicButtons(){
     
      for(var j=0;j<buttons.length;j++){
          buttons[j].addEventListener('click',function(event){
-            var message="Button "+event.target.id+" Clicked! <br>"; 
-            message+="Button Position from Top : "+event.screenY+"<br>";
-            message+="Button Position from Left : "+event.screenX; 
+            console.log(event);
+            var message="Button Name : "+ event.target.name+"<br>"; 
+            message+="Button Index : "+event.target.id; 
             document.getElementById('button_response_area').innerHTML=message; 
          }); 
      }
