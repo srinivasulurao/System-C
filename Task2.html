@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Buttons Creation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body style='text-align:center;width:80%;margin:auto'>
+    <h5>Task 2 - Write a function that will create 5 clickable buttons in the document, and attach an event on each which will log the button name (created dynamically) and index position.</h5>
+    <hr>
+     <div id='dynamic_button_area' class='dyamic_button_area'></div><hr>
+     <div id='button_response_area'></div>
+</body>
+</html>
+
+<script>
+    var total_buttons=5;
+    function createDynamicButtons(){
+     for(var i=0;i<total_buttons;i++){
+         var button_number=i+1;
+         var button=document.createElement('button'); 
+         button.setAttribute('class','btn'); 
+         button.style.marginRight="20px"; 
+
+         button.setAttribute('id',button_number); 
+         button.innerHTML="Click Button "+button_number;
+         var dyanamic_area=document.getElementById('dynamic_button_area');
+         dyanamic_area.appendChild(button); 
+     }
+
+     //Now add the event handlers for the buttons.
+
+     var buttons=document.getElementsByClassName('btn');
+    
+     for(var j=0;j<buttons.length;j++){
+         buttons[j].addEventListener('click',function(event){
+            console.log(event); 
+            var message="Button "+event.target.id+" Clicked! <br>";
+            message+="Button Position from Top : "+event.screenY+"<br>";
+            message+="Button Position from Left : "+event.screenX; 
+            document.getElementById('button_response_area').innerHTML=message; 
+         }); 
+     }
+    }
+
+    createDynamicButtons(); 
+</script>
